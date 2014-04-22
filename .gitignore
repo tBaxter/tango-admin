@@ -1,0 +1,14 @@
+
+*.gz
+
+tango_admin.egg-info/dependency_links.txt
+
+tango_admin.egg-info/not-zip-safe
+
+tango_admin.egg-info/PKG-INFO
+
+tango_admin.egg-info/requires.txt
+
+tango_admin.egg-info/SOURCES.txt
+
+tango_admin.egg-info/top_level.txt

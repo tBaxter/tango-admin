@@ -1,11 +1,10 @@
 from django.conf import settings
-from django.contrib.sites.models import Site
-from django.contrib.auth.models import Group
 from django.db import models
 
 UserModel = getattr(settings, "AUTH_USER_MODEL", "auth.User")
 
 # Add some description and featured to Site and auth.Group models
+"""
 Site.add_to_class('description', models.CharField(
     max_length=100,
     blank=True,
@@ -16,7 +15,7 @@ Group.add_to_class('description', models.TextField(
     blank=True,
     help_text='A brief description of this group')
 )
-
+"""
 
 class Blacklist(models.Model):
     user = models.ForeignKey(UserModel, editable=False)

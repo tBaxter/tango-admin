@@ -22,16 +22,17 @@ def nuke_users(modeladmin, request, queryset):
     form        = BlacklistForm(initial={'_selected_action': request.POST.getlist(admin.ACTION_CHECKBOX_NAME)})
     contenttype = ContentType.objects.get_for_model(queryset.model)
     # Because we want this action available from comments or user admin lists, sort out content type
-    if str(contenttype) == 'user':
+    ctype_as_string = unicode(contenttype)
+    if ctype_as_string == 'user':
         users = queryset
-    if str(contenttype) == 'comment':
+    if ctype_as_string == 'comment':
         # build list of unique users within comment list.
         users = []
         for comment in queryset:
             if not comment.user in users:
                 users.append(comment.user)
 
-    if str(contenttype) == 'contact':
+    if ctype_as_string == 'contact':
         # build list of unique users from contact list.
         users = []
         for c in queryset:

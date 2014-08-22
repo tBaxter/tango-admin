@@ -1,6 +1,9 @@
 # Tango Admin Change Log
 
-## 0.2 -
+## 0.2.1
+* Updated readme
+
+## 0.2
 * Lazy first effort at admin theme, but it's responsive.
 * Admin now has app menu on left side. Thanks to @kezabelle for the idea.
 * Moved inline link lists in from tango-shared

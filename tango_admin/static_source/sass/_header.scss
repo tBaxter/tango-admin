@@ -1,0 +1,66 @@
+
+#header {
+  @include clearfix();
+  width: 100%;
+  background: #444;
+  color: #ffc;
+  border-bottom: 1px solid #666;
+
+  a {
+      color: #e0e0e0;
+
+      &:hover {
+      color: #fff;
+    }
+  }
+}
+
+#branding {
+  overflow: hidden;
+  position: relative;
+
+  h2, h1, {
+    line-height: 1em;
+    margin: 0}
+
+  h2 {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: normal;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+#branding, #user-tools {
+  @include breakpoint(m) {
+    display: inline-block;
+  }
+}
+
+#user-tools {
+  text-align: right;
+  float: right;
+  width: 40%;
+
+  select {
+    display: block;
+    float: right;
+    margin-left: 5px;
+
+    option {
+      text-align: right;
+    }
+  }
+
+
+  @include breakpoint(m) {
+    width: 70%;
+  }
+}
+

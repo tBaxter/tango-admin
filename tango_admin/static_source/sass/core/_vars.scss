@@ -1,0 +1,53 @@
+// ------------- VARIABLES ----------- //
+// To-do:
+
+$sidebarWidth: 220px;
+
+// Your base background color. Default is off-white.
+$base         : #f9f9f9 !default;
+
+// a lower-contrast background color. Default is light gray.
+$base_alt     : darken($base, 5%) !default;
+
+// a still lower off-background. Default is medium gray.
+$base_alt2    : #aaa !default;
+
+// Your text and other items needing high-contrast from base. Default is almost black.
+$inverse      : #222 !default;
+
+// lower contrast items. Default is dark gray.
+$inverse_alt  : lighten($inverse, 20%) !default;
+
+// accent color
+$accent       : #5b80b2 !default;
+
+// alternate, darker accent color
+$accent_alt   : darken($accent, 10%) !default;
+
+// meta text
+$meta         : #888;
+
+$alert        : #FFDC59;
+$error        : #c63314;
+
+// a translucent texture overlay, if you'd like one.
+$texture      : url(../../img/site/texture-overlay.png) !default;
+
+$base_font    : "Helvetica", "Calibri", "Lucida Sans Unicode", "Arial Unicode MS", Verdana, Arial, sans-serif !default;
+$alt_font     : Georgia, serif !default;
+
+$default_radius: 4px; // a default border radius, to help encourage consistency.
+
+// Column width
+$col_width: 60;
+
+// Default typography variables are set in typography.scss
+
+// Define breakpoints
+$s   : 540px;     // larger, but still single-column devices.
+$m   : 760px;     // approximately ipad portrait.
+$l   : 940px;     // approximately ipad landscape or small desktop.
+$xl  : 1240px;    // approximately 1200px-ish.
+$xxl : 1620px;    // approximately 1550-ish.
+
+

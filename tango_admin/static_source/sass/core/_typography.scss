@@ -1,0 +1,282 @@
+@import '_mixins.scss';
+
+/*********************************************
+  Capo typography is defined by a handful
+  of variables which create a 10 px baseline grid
+  and size various typographic elements appropriately
+  to remain on that grid.
+
+  This file also defines variables that can be used
+  for consistent margins, padding and gutters:
+
+  - @gutter: for columns between content. 20px
+  - @halfGutter: for padding in boxes, etc. Half of gutter.
+  - @defaultMargin: For consistently setting top and bottom margins
+    while staying on the baseline grid. Note: you can use multiples
+    ( @defaultMargin * 2 );
+**********************************************/
+
+// baseline is 12 px. Default text is set at 16/24.
+$baseline: 12px;
+
+// vertical spacing
+$gutter: 20px;
+$halfGutter: $gutter/2;
+
+// horizontal spacing
+$thinMargin: $baseline;
+$defaultMargin: $baseline * 2;
+$wideMargin: $baseline * 4;
+
+
+html, button, input, select, textarea { font-family: $base_font }
+
+// Correct font-size not inheriting in all browsers
+button, input, select, textarea { font-size: 100%; }
+
+html {
+  font-size: 1em; // 16px
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+// Sizes are duplicated to support older browsers
+// that don't understand REMs. IE8, I'm looking at you.
+@mixin larger-line-height {
+  line-height: 36px;
+  line-height: 2.25rem;
+}
+
+@mixin small-text {
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+@mixin sub-text {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+}
+
+// default desktop-size body text
+@mixin body-text {
+  font-size: 16px;
+  font-size: 1em;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+@mixin breakout-text {
+  font-size: 16px;
+  font-size: 1.142857rem;
+  line-height: 24px;
+  line-height: 1.33rem;
+}
+
+@mixin small-header {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 24px;
+  line-height: 1.25rem;
+}
+
+@mixin medium-header {
+  font-size: 21px;
+  font-size: 1.2857rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+@mixin large-header {
+  font-size: 30px;
+  font-size: 1.875rem;
+  @include larger-line-height();
+}
+
+@mixin xl-header {
+  font-size: 36px;
+  line-height: 48px;
+  font-size: 2.25rem;
+  line-height: 3rem;
+}
+@mixin super-text {
+  font-size: 48px;
+  line-height: 60px;
+  font-size: 3.42857rem;
+  line-height: 4.2857rem;
+}
+
+// Fine print and labels
+.small-text, small {
+  @include small-text();
+}
+
+// slightly less important than default body text.
+.sub-text {
+  @include small-text();
+  @include breakpoint(m) {
+    @include sub-text;
+  }
+}
+
+// default body text size.
+.body-text, body {
+  @include sub-text;
+
+  @include breakpoint(m) {
+    @include body-text;
+  }
+}
+
+// H5-style headers, and emphasized larger body text.
+.x-small-header, h5, .breakout-text {
+  @include body-text();
+
+  @include breakpoint(m) {
+    @include breakout-text();
+  }
+}
+
+.small-header, h4 {
+  @include breakout-text();
+
+  @include breakpoint(m) {
+    @include small-header();
+  }
+}
+
+// H3-style headers
+.medium-header, h3, .subhead {
+  @include small-header();
+
+  @include breakpoint(m) {
+    @include medium-header();
+  }
+}
+
+// H2-style headers
+.large-header, h2 {
+  @include medium-header();
+
+  @include breakpoint(m) {
+    @include large-header();
+  }
+}
+
+// H1-style headers
+.xl-header, h1 {
+  @include large-header();
+
+  @include breakpoint(m) {
+    @include xl-header();
+  }
+}
+
+[role=banner] h1 {
+  font-size: 42px;
+  font-size: 3rem;
+}
+
+// Large call-out headlines
+.super-text {
+  @include xl-header();
+  @include breakpoint(m) {
+    @include super-text();
+  }
+}
+
+/*
+h1, h2, h3, h4 { font-family: 'OpenSansSemibold'; }
+
+
+
+.bold-text { font-family: 'OpenSansSemiBold'; }
+.unbold-text { font-family: 'OpenSansRegular'; }
+.light-text { font-family: 'OpenSansLight'; }
+
+b, strong {
+  .bold-text;
+}
+
+p + p,
+p + div,
+p + h2,
+p + h3 {
+    margin-top: @defaultMargin;
+}
+p + p.small-text {
+    margin: 0.875em 0 0.25em;
+}
+.sidebar-wrapper { font-size: .9em;}
+
+*/
+
+
+// Redeclare monospace font family: h5bp.com/j
+// Improve readability of pre-formatted text in all browsers
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+// Position subscript and superscript content without affecting line-height: h5bp.com/k
+sub, sup {
+  @extend .small-text;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+h1, h2, h3, h4, h5, h6, p, ol, ul { margin: 0 }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+#content-wrapper {
+  p, ol, ul, small {
+    margin: $thinMargin 0;
+  }
+  p + h2, p + h3 { padding-top: $defaultMargin }
+
+  h3 + p { margin-top: 0}
+}
+
+// typically (but not always) used as small.meta
+.meta { color: $meta }
+
+.hero {
+  @extend .small-header;
+  h1 { @extend .super-text; }
+}
+
+// special headlines
+.kicker {
+  @extend .small-header;
+  text-transform: uppercase;
+}
+
+small {
+  display: inline-block;
+}
+
+// set sidebar smaller by default
+[role=complementary] {
+  @extend .sub-text;
+
+  h1 {
+    @extend .large-header;
+  }
+  h2 {
+    @extend .medium-header;
+  }
+  h3 {
+    @extend .small-header;
+  }
+}
+
+
+

@@ -1,0 +1,174 @@
+/* Capo basic reset/normalization styles
+   Based on HTML5 Boilerplate 3.0: h5bp.com/css
+*/
+@import '_typography.scss';
+
+// Reset box model
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+// =============================================================================
+// HTML5 display definitions
+// =============================================================================
+article, aside, details, figcaption, figure, footer, header, nav, section { display: block; }
+audio, canvas, video { display: inline-block; }
+audio:not([controls]), [hidden] { display: none; }
+
+body { margin: 0; }
+
+// Focused/selected/active/hovered
+::selection { text-shadow: none !important; }
+a:hover, a:active { outline: 0; }
+
+// Redeclare monospace font family: h5bp.com/j
+// Improve readability of pre-formatted text in all browsers
+//pre, code, kbd, samp { font-family: monospace, serif; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q {
+  @extend .sub-text;
+  quotes: none;
+  display:block;
+  font-family: $alt_font;
+  font-style: italic;
+  // &:before, &:after { font-size:3em; position:absolute; margin-top:-.25em; opacity:.5; font-style:normal}
+  // &:before { content: "“"; margin-left:-.5em}
+  // &:after { content: "”"; }
+}
+
+button, input, select, textarea { font-family: sans-serif; }
+a { text-decoration:none }
+iframe, hr, img, fieldset, legend { border:0 }
+abbr[title] { border-bottom: 1px dotted; cursor:help}
+b, strong { font-weight: bold; }
+blockquote { @include margin(all); }
+dfn { font-style: italic; }
+hr {
+  @include margin(top-bottom);
+  display: block;
+  height: 1px;
+  border-top: 1px solid #ccc;
+  padding: 0;
+}
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff6; color: #000; font-style: italic; font-weight: bold; }
+address {font-style: normal }
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol {
+  @include margin(top-bottom);
+  padding: 0;
+}
+dd {
+  margin: 0 0 0 $gutter;
+}
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+// Remove the gap between images and borders on image containers: h5bp.com/i/440
+// Responsify
+// Provide override for responsive
+*/
+img { vertical-align: middle;}
+img.noscale, .noscale img {width:auto}
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+figure { margin: 0; }
+
+/* =============================================================================
+   Button and input normalization
+   ========================================================================== */
+
+/* Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet) */
+button, input { line-height: normal; }
+
+// Display hand cursor for clickable form elements
+// Allow styling of clickable form elements in iOS
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/* Re-set default cursor for disabled elements */
+button[disabled], input[disabled] { cursor: default; }
+
+/* Remove inner padding and border in FF3/4: h5bp.com/l */
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+
+a {
+  color: $accent_alt;
+
+  &:link{ -webkit-tap-highlight-color: $accent_alt; }
+  &:hover { color: $accent }
+}
+
+h1, h2, h3 { font-weight:normal }
+
+time {
+  @extend .sub-text;
+  color: $inverse_alt;
+  display: block;
+}
+
+::-moz-selection { background: $inverse_alt; color:$base_alt }
+::selection      { background: $inverse_alt; color:$base_alt }
+
+// TABLES
+// table is unclassed. It should suit 99% use cases.
+// In the cases where it doesn't, class the special table, not every 'normal' table. Sheesh.
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 99.9%;
+  margin: $thinMargin 0 $defaultMargin;
+
+  caption {
+    @include small-text();
+    padding-top: ($baseline /2); //accomodate small-text, get back on grid
+    border-bottom: 1px solid $base_alt2;
+    color: $inverse_alt;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+
+  }
+  tr {
+    border-bottom: 1px solid $base_alt;
+  }
+  th, td {
+    padding: 6px 5px;
+    @include sub-text();
+  }
+  th {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  thead th {
+    @include small-text();
+  }
+
+  td.num { text-align: right } // numbers are right-aligned.
+
+  // allows highlighting a given column
+  col.highlight { background: $base; font-weight:bold; }
+
+  // zebra-striped tables.
+  // Note tbody must be present. We don't want to stripe headers or footers.
+  &.striped tbody tr:nth-child(even) { background: $base_alt; }
+}

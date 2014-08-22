@@ -33,8 +33,6 @@ class TextCounterWidget(forms.Textarea):
     """
     Used for textAreas that need to count their characters
     """
-    class Media:
-        js = ('/static/admin/text_field_counter.js',)
 
     def render(self, name, value, attrs=None):
         if attrs:

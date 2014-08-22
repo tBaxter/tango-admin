@@ -12,3 +12,5 @@ tango_admin.egg-info/requires.txt
 tango_admin.egg-info/SOURCES.txt
 
 tango_admin.egg-info/top_level.txt
+
+*.pyc

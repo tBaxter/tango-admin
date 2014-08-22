@@ -1,0 +1,28 @@
+
+{% if apps %}
+  <ul id="sidebar_app_list">
+    {% for app in apps %}
+      <li{% if app.app_url in path %} class="active"{% endif %}>
+        <a href="{{ app.app_url }}">
+          {{ app.name }}
+        </a>
+
+        {% if app.models %}
+          <ul>
+            {% for model in app.models %}
+              <li{% if model.admin_url in path %} class="active"{% endif %}>
+                {% if model.admin_url %}
+                  <a href="{{ model.admin_url }}">
+                    {{ model.name }}
+                  </a>
+                {% else %}
+                  <span>{{ model.name }}</span>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

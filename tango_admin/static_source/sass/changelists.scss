@@ -1,0 +1,236 @@
+@import 'core/_vars.scss';
+@import 'core/_mixins.scss';
+@import 'core/_typography.scss';
+
+
+/* CHANGELISTS */
+
+#changelist {
+    position: relative;
+}
+
+.change-list .hiddenfields { display:none; }
+
+.change-list .filtered table tbody th {
+    padding-right: 1em;
+}
+
+#changelist-form .results {
+  overflow-x: auto;
+}
+
+#changelist .toplinks {
+    border-bottom: 1px solid #ccc !important;
+}
+
+#changelist .paginator {
+    color: #666;
+    border: solid #eee;
+    border-width: 1px 0;
+    overflow: hidden;
+}
+
+/* CHANGELIST TABLES */
+
+#changelist table thead th {
+    padding: 0;
+    white-space: nowrap;
+}
+
+#changelist table thead th.action-checkbox-column {
+    width: 1.5em;
+    text-align: center;
+}
+
+#changelist table tbody td, #changelist table tbody th {
+    border-left: 1px solid #ddd;
+}
+
+#changelist table tbody td:first-child, #changelist table tbody th:first-child {
+    border-left: 0;
+}
+
+#changelist table tbody td.action-checkbox {
+    text-align:center;
+}
+
+#changelist table tfoot {
+    color: #666;
+}
+
+/* TOOLBAR */
+#toolbar {
+  float: left;
+  margin-top: -2.875em;
+  margin-left: -10px;
+}
+
+#changelist #changelist-search img {
+    display: none;
+}
+
+/* FILTER COLUMN */
+
+#changelist-filter {
+  @include pad(all);
+  width: $sidebarWidth;
+  padding: 10px;
+  float: right;
+  top: 0;
+  margin-top:-3px;
+  right: 0;
+  border-left: 1px solid #ddd
+}
+
+#changelist-filter h2, #changelist-filter h3 {
+   @include small-text();
+}
+
+#changelist-filter h3 {
+  @include pad(top);
+}
+
+#changelist-filter ul {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+#changelist-filter li {
+  list-style-type: none;
+}
+
+#changelist-filter a {
+    color: #999;
+}
+
+#changelist-filter a:hover {
+    color: #036;
+}
+
+#changelist-filter li.selected {
+    border-left: 5px solid #ccc;
+    padding-left: 5px;
+    margin-left: -10px;
+}
+
+#changelist-filter li.selected a {
+    color: #5b80b2 !important;
+}
+
+/* DATE DRILLDOWN */
+
+.change-list ul.toplinks {
+    display: block;
+    background: white;
+    border-top: 1px solid #ddd;
+    float: left;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+}
+
+.change-list ul.toplinks li {
+    padding: 3px 6px;
+    font-weight: bold;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.change-list ul.toplinks .date-back a {
+    color: #999;
+}
+
+.change-list ul.toplinks .date-back a:hover {
+    color: #036;
+}
+
+/* PAGINATOR */
+
+.paginator {
+    @include pad(top-bottom);
+    border-top: 1px solid #ddd;
+}
+
+.paginator a:link, .paginator a:visited {
+    padding: 2px 6px;
+    border: solid 1px #ccc;
+    background: white;
+    text-decoration: none;
+}
+
+.paginator a.showall {
+    padding: 0 !important;
+    border: none !important;
+}
+
+.paginator a.showall:hover {
+    color: #036 !important;
+    background: transparent !important;
+}
+
+.paginator .end {
+    border-width: 2px !important;
+    margin-right: 6px;
+}
+
+.paginator .this-page {
+    padding: 2px 6px;
+    font-weight: bold;
+    font-size: 13px;
+    vertical-align: top;
+}
+
+.paginator a:hover {
+    color: white;
+    background: #5b80b2;
+    border-color: #036;
+}
+
+/* ACTIONS */
+
+#changelist table tbody tr.selected {
+    background-color: #ffc;
+}
+
+#changelist .actions {
+  border-bottom: 1px solid #ddd;
+}
+
+#changelist .actions.selected {
+    background: #fffccf;
+    border-top: 1px solid #fffee8;
+    border-bottom: 1px solid #edecd6;
+}
+
+#changelist .actions span.all,
+#changelist .actions span.action-counter,
+#changelist .actions span.clear,
+#changelist .actions span.question {
+    font-size: 11px;
+    margin: 0 0.5em;
+    display: none;
+}
+
+#changelist .actions:last-child {
+    border-bottom: none;
+}
+
+#changelist .actions select {
+    border: 1px solid #aaa;
+    margin-left: 0.5em;
+    padding: 1px 2px;
+}
+
+#changelist .actions label {
+    font-size: 11px;
+    margin-left: 0.5em;
+}
+
+#changelist #action-toggle {
+    display: none;
+}
+
+#changelist .actions .button {
+    font-size: 11px;
+    padding: 1px 2px;
+}

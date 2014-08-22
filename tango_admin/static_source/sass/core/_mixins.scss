@@ -1,0 +1,242 @@
+@mixin radius($rad_px) {
+  -webkit-border-radius:$rad_px;
+     -moz-border-radius:$rad_px;
+          border-radius:$rad_px;
+}
+
+
+@mixin radius_gradient($start: #ccc, $end: transparent, $amount:20%, $texture:none) {
+  background: -moz-radial-gradient(center, ellipse cover, $start 0%, $end 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $start), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, $start 0%, $end 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, $start 0%, $end 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, $start 0%, $end 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center, $start 0%, $end 100%); /* W3C */
+}
+
+// Opacity
+@mixin opacity($value) {
+  filter: alpha(opacity=$value * 100);
+  -ms-filter: "alpha(opacity=" + $value * 100+ ")";
+  -khtml-opacity: $value;
+    -moz-opacity: $value;
+         opacity: $value;
+}
+
+
+@mixin box-shadow($x_axis:0, $y_axis:1px, $distance:2px, $opacity:0.5) {
+  -webkit-box-shadow: $x_axis $y_axis $distance rgba(0, 0, 0, $opacity);
+     -moz-box-shadow: $x_axis $y_axis $distance rgba(0, 0, 0, $opacity);
+          box-shadow: $x_axis $y_axis $distance rgba(0, 0, 0, $opacity);
+}
+
+// Transitions
+@mixin trans($property:all, $duration:.2s, $function:ease-in) {
+  // Property: all, background, color, height, weight or outline
+  // Duration: time of the transition (in seconds or ms)
+  // Function: linear, ease, ease-in, ease-out, ease-in-out
+  -webkit-transition: $property $duration $function;
+     -moz-transition: $property $duration $function;
+      -ms-transition: $property $duration $function;
+       -o-transition: $property $duration $function;
+          transition: $property $duration $function;
+}
+
+@mixin kill_trans() {
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+
+
+// transforms
+@mixin transform ($transforms) {
+  -webkit-transform: $transforms;
+     -moz-transform: $transforms;
+      -ms-transform: $transforms;
+       -o-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+
+@mixin scroll_horizontal() {
+  &::-webkit-scrollbar {
+    height: 8px;
+    @include radius(10px);
+    margin:5px;
+  }
+  &::-webkit-scrollbar-track {
+    @include radius(10px);
+    background: $base_alt;
+  }
+  &::-webkit-scrollbar-thumb {
+    @include radius(10px);
+    @include gradient($base);
+    height:4px;
+    border:1px solid $inverse_alt;
+  }
+}
+
+@mixin scroll_vertical() {
+  &::-webkit-scrollbar {
+    width: 8px;
+    @include radius(10px);
+    margin: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    @include radius(10px);
+    background: $base_alt;
+  }
+  &::-webkit-scrollbar-thumb {
+    @include gradient($base);
+    @include radius(10px);
+    width: 4px;
+    border: 1px solid $inverse_alt;
+  }
+}
+
+// screen provides a boxedform-like screened gradient background, using the gradient_20 mixin
+@mixin screen {
+  @include gradient($base);
+  @include radius(8px);
+  border: 1px solid $accent;
+  padding: .25em 10px;
+  margin-bottom:1em;
+}
+
+
+// Pull padding styles from typography so we don't have to extend.
+@mixin pad($side, $thin:false) {
+  @if $side == all {
+    @if $thin {
+      padding: $baseline/2 $halfGutter;
+    }
+    @else {
+      padding: $baseline $halfGutter;
+    }
+  }
+  @if $side == top {
+    padding-top: $baseline;
+  }
+  @if $side == bottom {
+    padding-bottom: $baseline;
+  }
+  @if $side == top-bottom {
+    padding: $baseline 0;
+  }
+  @if $side == sides {
+    padding: 0 $halfGutter;
+  }
+}
+
+// Pull margin styles from typography so we don't have to extend.
+@mixin margin($side) {
+  @if $side == all {
+    margin: $gutter $defaultMargin;
+  }
+  @if $side == top {
+    margin-top: $defaultMargin;
+  }
+  @if $side == bottom {
+    margin-bottom: $defaultMargin;
+  }
+  @if $side == top-bottom {
+    padding: $baseline 0;
+  }
+  @if $side == sides {
+    margin: 0 $gutter;
+  }
+}
+
+
+
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media (max-width: $s)  {
+      @content;
+    }
+  }
+  @if $point == s {
+    @media (min-width: $s)  {
+      @content;
+    }
+  }
+
+  @if $point == m {
+    @media (min-width: $m)  {
+      @content;
+    }
+  }
+  @if $point == l {
+    @media (min-width: $l)  {
+      @content;
+    }
+  }
+  @if $point == xl {
+    @media (min-width: $xl)  {
+      @content;
+    }
+  }
+  @if $point == xxl {
+    @media (min-width: $xxl)  {
+      @content;
+    }
+  }
+}
+
+
+// create fancy horizontal rule.
+@mixin fancy_rule() {
+  content: "";
+  display: block;
+  clear: both;
+  height: 5px;
+  background: rgba(255,255,255,.2);
+  border-radius: 5px;
+  -webkit-box-shadow:inset 2px 2px 2px rgba(0,0,0,.5);
+  -moz-box-shadow:inset 2px 2px 2px rgba(0,0,0,.4);
+  box-shadow:inset 2px 2px 2px rgba(0,0,0,.5);
+}
+
+
+@mixin clearfix() {
+  *zoom: 1;
+  &:before, &:after { content: ""; display: table; }
+  &:after { clear: both; }
+}
+
+@mixin constrain() {
+  width: auto;
+
+  @include breakpoint(xs) {
+    padding: 0 $gutter;
+  }
+
+  @include breakpoint(s)  {
+    margin: 0 auto;
+    width: $s;
+    padding: 0;
+  }
+
+  @include breakpoint(m)  {
+    width: $m;
+  }
+
+  @include breakpoint(l)  {
+    width: $l;
+  }
+
+  @include breakpoint(xl) {
+    width: $xl;
+  }
+
+  @include breakpoint(xxl) {
+    width: $xxl;
+  }
+}

@@ -1,0 +1,382 @@
+/*********************************************
+  Capo typography is defined by a handful
+  of variables which create a 10 px baseline grid
+  and size various typographic elements appropriately
+  to remain on that grid.
+
+  This file also defines variables that can be used
+  for consistent margins, padding and gutters:
+
+  - @gutter: for columns between content. 20px
+  - @halfGutter: for padding in boxes, etc. Half of gutter.
+  - @defaultMargin: For consistently setting top and bottom margins
+    while staying on the baseline grid. Note: you can use multiples
+    ( @defaultMargin * 2 );
+**********************************************/
+html, button, input, select, textarea {
+  font-family: "Helvetica", "Calibri", "Lucida Sans Unicode", "Arial Unicode MS", Verdana, Arial, sans-serif; }
+
+button, input, select, textarea {
+  font-size: 100%; }
+
+html {
+  font-size: 1em;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+.small-text, sub, sup, small {
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem; }
+
+.sub-text, [role=complementary] {
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem; }
+  @media (min-width: 760px) {
+    .sub-text, [role=complementary] {
+      font-size: 14px;
+      font-size: 0.875rem;
+      line-height: 18px;
+      line-height: 1.125rem; } }
+
+.body-text, body {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 18px;
+  line-height: 1.125rem; }
+  @media (min-width: 760px) {
+    .body-text, body {
+      font-size: 16px;
+      font-size: 1em;
+      line-height: 24px;
+      line-height: 1.5rem; } }
+
+.x-small-header, h5, .breakout-text {
+  font-size: 16px;
+  font-size: 1em;
+  line-height: 24px;
+  line-height: 1.5rem; }
+  @media (min-width: 760px) {
+    .x-small-header, h5, .breakout-text {
+      font-size: 16px;
+      font-size: 1.142857rem;
+      line-height: 24px;
+      line-height: 1.33rem; } }
+
+.small-header, .hero, .kicker, [role=complementary] h3, h4 {
+  font-size: 16px;
+  font-size: 1.142857rem;
+  line-height: 24px;
+  line-height: 1.33rem; }
+  @media (min-width: 760px) {
+    .small-header, .hero, .kicker, [role=complementary] h3, h4 {
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 24px;
+      line-height: 1.25rem; } }
+
+.medium-header, [role=complementary] h2, h3, .subhead {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 24px;
+  line-height: 1.25rem; }
+  @media (min-width: 760px) {
+    .medium-header, [role=complementary] h2, h3, .subhead {
+      font-size: 21px;
+      font-size: 1.2857rem;
+      line-height: 24px;
+      line-height: 1.5rem; } }
+
+.large-header, [role=complementary] h1, h2 {
+  font-size: 21px;
+  font-size: 1.2857rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+  @media (min-width: 760px) {
+    .large-header, [role=complementary] h1, h2 {
+      font-size: 30px;
+      font-size: 1.875rem;
+      line-height: 36px;
+      line-height: 2.25rem; } }
+
+.xl-header, h1 {
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 36px;
+  line-height: 2.25rem; }
+  @media (min-width: 760px) {
+    .xl-header, h1 {
+      font-size: 36px;
+      line-height: 48px;
+      font-size: 2.25rem;
+      line-height: 3rem; } }
+
+[role=banner] h1 {
+  font-size: 42px;
+  font-size: 3rem; }
+
+.super-text, .hero h1 {
+  font-size: 36px;
+  line-height: 48px;
+  font-size: 2.25rem;
+  line-height: 3rem; }
+  @media (min-width: 760px) {
+    .super-text, .hero h1 {
+      font-size: 48px;
+      line-height: 60px;
+      font-size: 3.42857rem;
+      line-height: 4.2857rem; } }
+
+/*
+h1, h2, h3, h4 { font-family: 'OpenSansSemibold'; }
+
+
+
+.bold-text { font-family: 'OpenSansSemiBold'; }
+.unbold-text { font-family: 'OpenSansRegular'; }
+.light-text { font-family: 'OpenSansLight'; }
+
+b, strong {
+  .bold-text;
+}
+
+p + p,
+p + div,
+p + h2,
+p + h3 {
+    margin-top: @defaultMargin;
+}
+p + p.small-text {
+    margin: 0.875em 0 0.25em;
+}
+.sidebar-wrapper { font-size: .9em;}
+
+*/
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold; }
+
+#content-wrapper p, #content-wrapper ol, #content-wrapper ul, #content-wrapper small {
+  margin: 12px 0; }
+#content-wrapper p + h2, #content-wrapper p + h3 {
+  padding-top: 24px; }
+#content-wrapper h3 + p {
+  margin-top: 0; }
+
+.meta {
+  color: #888888; }
+
+.kicker {
+  text-transform: uppercase; }
+
+small {
+  display: inline-block; }
+
+/* CHANGELISTS */
+#changelist {
+  position: relative; }
+
+.change-list .hiddenfields {
+  display: none; }
+
+.change-list .filtered table tbody th {
+  padding-right: 1em; }
+
+#changelist-form .results {
+  overflow-x: auto; }
+
+#changelist .toplinks {
+  border-bottom: 1px solid #ccc !important; }
+
+#changelist .paginator {
+  color: #666;
+  border: solid #eee;
+  border-width: 1px 0;
+  overflow: hidden; }
+
+/* CHANGELIST TABLES */
+#changelist table thead th {
+  padding: 0;
+  white-space: nowrap; }
+
+#changelist table thead th.action-checkbox-column {
+  width: 1.5em;
+  text-align: center; }
+
+#changelist table tbody td, #changelist table tbody th {
+  border-left: 1px solid #ddd; }
+
+#changelist table tbody td:first-child, #changelist table tbody th:first-child {
+  border-left: 0; }
+
+#changelist table tbody td.action-checkbox {
+  text-align: center; }
+
+#changelist table tfoot {
+  color: #666; }
+
+/* TOOLBAR */
+#toolbar {
+  float: left;
+  margin-top: -2.875em;
+  margin-left: -10px; }
+
+#changelist #changelist-search img {
+  display: none; }
+
+/* FILTER COLUMN */
+#changelist-filter {
+  padding: 12px 10px;
+  width: 220px;
+  padding: 10px;
+  float: right;
+  top: 0;
+  margin-top: -3px;
+  right: 0;
+  border-left: 1px solid #dddddd; }
+
+#changelist-filter h2, #changelist-filter h3 {
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem; }
+
+#changelist-filter h3 {
+  padding-top: 12px; }
+
+#changelist-filter ul {
+  padding-left: 0;
+  margin-left: 0; }
+
+#changelist-filter li {
+  list-style-type: none; }
+
+#changelist-filter a {
+  color: #999; }
+
+#changelist-filter a:hover {
+  color: #036; }
+
+#changelist-filter li.selected {
+  border-left: 5px solid #ccc;
+  padding-left: 5px;
+  margin-left: -10px; }
+
+#changelist-filter li.selected a {
+  color: #5b80b2 !important; }
+
+/* DATE DRILLDOWN */
+.change-list ul.toplinks {
+  display: block;
+  background: white;
+  border-top: 1px solid #ddd;
+  float: left;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%; }
+
+.change-list ul.toplinks li {
+  padding: 3px 6px;
+  font-weight: bold;
+  list-style-type: none;
+  display: inline-block; }
+
+.change-list ul.toplinks .date-back a {
+  color: #999; }
+
+.change-list ul.toplinks .date-back a:hover {
+  color: #036; }
+
+/* PAGINATOR */
+.paginator {
+  padding: 12px 0;
+  border-top: 1px solid #ddd; }
+
+.paginator a:link, .paginator a:visited {
+  padding: 2px 6px;
+  border: solid 1px #ccc;
+  background: white;
+  text-decoration: none; }
+
+.paginator a.showall {
+  padding: 0 !important;
+  border: none !important; }
+
+.paginator a.showall:hover {
+  color: #036 !important;
+  background: transparent !important; }
+
+.paginator .end {
+  border-width: 2px !important;
+  margin-right: 6px; }
+
+.paginator .this-page {
+  padding: 2px 6px;
+  font-weight: bold;
+  font-size: 13px;
+  vertical-align: top; }
+
+.paginator a:hover {
+  color: white;
+  background: #5b80b2;
+  border-color: #036; }
+
+/* ACTIONS */
+#changelist table tbody tr.selected {
+  background-color: #ffc; }
+
+#changelist .actions {
+  border-bottom: 1px solid #ddd; }
+
+#changelist .actions.selected {
+  background: #fffccf;
+  border-top: 1px solid #fffee8;
+  border-bottom: 1px solid #edecd6; }
+
+#changelist .actions span.all,
+#changelist .actions span.action-counter,
+#changelist .actions span.clear,
+#changelist .actions span.question {
+  font-size: 11px;
+  margin: 0 0.5em;
+  display: none; }
+
+#changelist .actions:last-child {
+  border-bottom: none; }
+
+#changelist .actions select {
+  border: 1px solid #aaa;
+  margin-left: 0.5em;
+  padding: 1px 2px; }
+
+#changelist .actions label {
+  font-size: 11px;
+  margin-left: 0.5em; }
+
+#changelist #action-toggle {
+  display: none; }
+
+#changelist .actions .button {
+  font-size: 11px;
+  padding: 1px 2px; }

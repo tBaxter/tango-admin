@@ -1,0 +1,31 @@
+#header {
+  width: 100%;
+  background: #444;
+  color: #ffc; }
+  #header a {
+    color: #e0e0e0; }
+    #header a:hover {
+      color: #fff; }
+
+#branding {
+  overflow: hidden;
+  position: relative; }
+  #branding h2, #branding h1 {
+    line-height: 1em;
+    margin: 0; }
+  #branding h2 {
+    font-size: 13px; }
+  #branding h1 {
+    font-size: 30px;
+    font-weight: normal; }
+  #branding a:hover {
+    text-decoration: none; }
+
+#user-tools {
+  font-size: 13px;
+  text-align: right;
+  margin-top: -1em; }
+
+#userlinks li {
+  display: inline;
+  padding: 5px 0 5px 20px; }

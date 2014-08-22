@@ -1,0 +1,551 @@
+/*********************************************
+  Capo typography is defined by a handful
+  of variables which create a 10 px baseline grid
+  and size various typographic elements appropriately
+  to remain on that grid.
+
+  This file also defines variables that can be used
+  for consistent margins, padding and gutters:
+
+  - @gutter: for columns between content. 20px
+  - @halfGutter: for padding in boxes, etc. Half of gutter.
+  - @defaultMargin: For consistently setting top and bottom margins
+    while staying on the baseline grid. Note: you can use multiples
+    ( @defaultMargin * 2 );
+**********************************************/
+@import url("widgets.css");
+html, button, input, select, textarea {
+  font-family: "Helvetica", "Calibri", "Lucida Sans Unicode", "Arial Unicode MS", Verdana, Arial, sans-serif; }
+
+button, input, select, textarea {
+  font-size: 100%; }
+
+html {
+  font-size: 1em;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+.small-text, sub, sup, small {
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem; }
+
+.sub-text, [role=complementary] {
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem; }
+  @media (min-width: 760px) {
+    .sub-text, [role=complementary] {
+      font-size: 14px;
+      font-size: 0.875rem;
+      line-height: 18px;
+      line-height: 1.125rem; } }
+
+.body-text, body {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 18px;
+  line-height: 1.125rem; }
+  @media (min-width: 760px) {
+    .body-text, body {
+      font-size: 16px;
+      font-size: 1em;
+      line-height: 24px;
+      line-height: 1.5rem; } }
+
+.x-small-header, h5, .breakout-text {
+  font-size: 16px;
+  font-size: 1em;
+  line-height: 24px;
+  line-height: 1.5rem; }
+  @media (min-width: 760px) {
+    .x-small-header, h5, .breakout-text {
+      font-size: 16px;
+      font-size: 1.142857rem;
+      line-height: 24px;
+      line-height: 1.33rem; } }
+
+.small-header, .hero, .kicker, [role=complementary] h3, h4 {
+  font-size: 16px;
+  font-size: 1.142857rem;
+  line-height: 24px;
+  line-height: 1.33rem; }
+  @media (min-width: 760px) {
+    .small-header, .hero, .kicker, [role=complementary] h3, h4 {
+      font-size: 18px;
+      font-size: 1.125rem;
+      line-height: 24px;
+      line-height: 1.25rem; } }
+
+.medium-header, [role=complementary] h2, h3, .subhead {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 24px;
+  line-height: 1.25rem; }
+  @media (min-width: 760px) {
+    .medium-header, [role=complementary] h2, h3, .subhead {
+      font-size: 21px;
+      font-size: 1.2857rem;
+      line-height: 24px;
+      line-height: 1.5rem; } }
+
+.large-header, [role=complementary] h1, h2 {
+  font-size: 21px;
+  font-size: 1.2857rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+  @media (min-width: 760px) {
+    .large-header, [role=complementary] h1, h2 {
+      font-size: 30px;
+      font-size: 1.875rem;
+      line-height: 36px;
+      line-height: 2.25rem; } }
+
+.xl-header, h1 {
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 36px;
+  line-height: 2.25rem; }
+  @media (min-width: 760px) {
+    .xl-header, h1 {
+      font-size: 36px;
+      line-height: 48px;
+      font-size: 2.25rem;
+      line-height: 3rem; } }
+
+[role=banner] h1 {
+  font-size: 42px;
+  font-size: 3rem; }
+
+.super-text, .hero h1 {
+  font-size: 36px;
+  line-height: 48px;
+  font-size: 2.25rem;
+  line-height: 3rem; }
+  @media (min-width: 760px) {
+    .super-text, .hero h1 {
+      font-size: 48px;
+      line-height: 60px;
+      font-size: 3.42857rem;
+      line-height: 4.2857rem; } }
+
+/*
+h1, h2, h3, h4 { font-family: 'OpenSansSemibold'; }
+
+
+
+.bold-text { font-family: 'OpenSansSemiBold'; }
+.unbold-text { font-family: 'OpenSansRegular'; }
+.light-text { font-family: 'OpenSansLight'; }
+
+b, strong {
+  .bold-text;
+}
+
+p + p,
+p + div,
+p + h2,
+p + h3 {
+    margin-top: @defaultMargin;
+}
+p + p.small-text {
+    margin: 0.875em 0 0.25em;
+}
+.sidebar-wrapper { font-size: .9em;}
+
+*/
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold; }
+
+#content-wrapper p, #content-wrapper ol, #content-wrapper ul, #content-wrapper small {
+  margin: 12px 0; }
+#content-wrapper p + h2, #content-wrapper p + h3 {
+  padding-top: 24px; }
+#content-wrapper h3 + p {
+  margin-top: 0; }
+
+.meta {
+  color: #888888; }
+
+.kicker {
+  text-transform: uppercase; }
+
+small {
+  display: inline-block; }
+
+/* FORM ROWS */
+.form-row {
+  padding: 12px 0;
+  overflow: hidden;
+  border-top: 1px solid #eee; }
+
+.form-row img {
+  vertical-align: top; }
+
+.hidden {
+  display: none; }
+
+.form-row p {
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  padding-left: 0; }
+
+/* FORM LABELS */
+label {
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: normal;
+  color: #666;
+  width: 20%;
+  display: inline-block; }
+
+.required label, label.required {
+  font-weight: bold;
+  color: #222222; }
+
+/* RADIO BUTTONS */
+form ul.radiolist li {
+  list-style-type: none; }
+
+form ul.radiolist label {
+  float: none;
+  display: inline; }
+
+form ul.inline {
+  margin-left: 0;
+  padding: 0; }
+
+form ul.inline li {
+  float: left;
+  padding-right: 7px; }
+
+fieldset {
+  margin-bottom: 40px;
+  border: 1px solid #ddd;
+  background: #fcfcfc;
+  padding: 6px 10px; }
+
+fieldset h2 {
+  font-size: 18px; }
+  fieldset h2 .collapse-toggle {
+    font-size: 12px;
+    line-height: 18px;
+    font-size: 0.75rem;
+    line-height: 1.125rem; }
+
+/* ALIGNED FIELDSETS */
+.aligned label {
+  display: block;
+  word-wrap: break-word; }
+  @media (min-width: 760px) {
+    .aligned label {
+      float: left;
+      padding-right: 10px; } }
+
+.aligned ul label {
+  display: inline;
+  float: none;
+  width: auto; }
+
+@media (min-width: 760px) {
+  form .aligned p, form .aligned ul {
+    margin-left: 20%; } }
+
+form .aligned table p {
+  margin-left: 0;
+  padding-left: 0; }
+
+.aligned .vCheckboxLabel {
+  float: none !important;
+  display: inline;
+  padding-left: 4px; }
+
+.checkbox-row p.help {
+  margin-left: 0;
+  padding-left: 0 !important; }
+
+fieldset .field-box {
+  float: left;
+  margin-right: 20px; }
+
+/* WIDE FIELDSETS */
+.wide label {
+  width: 15em !important; }
+
+form .wide p {
+  margin-left: 15em; }
+
+form .wide p.help {
+  padding-left: 38px; }
+
+/* COLLAPSED FIELDSETS */
+fieldset.collapsed * {
+  display: none; }
+
+fieldset.collapsed h2, fieldset.collapsed,
+.collapsed .description {
+  display: block !important; }
+
+fieldset.collapsed h2 {
+  color: #999; }
+
+fieldset.collapsed .collapse-toggle {
+  background: transparent;
+  display: inline !important; }
+
+/* MONOSPACE TEXTAREAS */
+fieldset.monospace textarea {
+  font-family: "Bitstream Vera Sans Mono",Monaco,"Courier New",Courier,monospace; }
+
+/* SUBMIT ROW */
+.submit-row {
+  padding: 5px 7px;
+  text-align: right;
+  border: 1px solid #ccc;
+  margin: 5px 0;
+  overflow: hidden; }
+
+body.popup .submit-row {
+  overflow: auto; }
+
+.submit-row input {
+  margin: 0 0 0 5px; }
+
+.submit-row p {
+  margin: 0.3em; }
+
+.submit-row p.deletelink-box {
+  float: left; }
+
+.submit-row .deletelink {
+  background: url(../img/icon_deletelink.gif) 0 50% no-repeat;
+  padding-left: 14px; }
+
+/* CUSTOM FORM FIELDS */
+.vSelectMultipleField {
+  vertical-align: top !important; }
+
+.vCheckboxField {
+  border: none; }
+
+.vDateField, .vTimeField {
+  margin-right: 2px; }
+
+.vDateField {
+  min-width: 6.85em; }
+
+.vTimeField {
+  min-width: 4.7em; }
+
+.flatpages-flatpage #id_content {
+  height: 40.2em; }
+
+.module table .vPositiveSmallIntegerField {
+  width: 2.2em; }
+
+input[type=text], textarea, select {
+  border: 1px solid #ccc; }
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 5px; }
+  @media (min-width: 760px) {
+    input[type=text], textarea {
+      width: 80%; } }
+
+input[type=text].vIntegerField,
+input[type=text].vForeignKeyRawIdAdminField {
+  width: 5em; }
+
+/* INLINES */
+.inline-group {
+  padding: 0;
+  border: 1px solid #ccc;
+  margin: 10px 0; }
+
+.inline-related {
+  position: relative; }
+
+.inline-related h3 {
+  margin: 0;
+  color: #666;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd; }
+
+.inline-related h3 span.delete {
+  float: right; }
+
+.inline-related h3 span.delete label {
+  margin-left: 2px;
+  font-size: 11px; }
+
+.inline-related fieldset {
+  margin: 0;
+  border: none;
+  width: 100%; }
+
+.inline-related fieldset.module h3 {
+  margin: 0;
+  padding: 2px 5px 3px 5px;
+  font-size: 11px;
+  text-align: left;
+  font-weight: bold;
+  background: #bcd;
+  color: #fff; }
+
+.inline-group .tabular fieldset.module {
+  border: none;
+  border-bottom: 1px solid #ddd; }
+
+.inline-related.tabular fieldset.module table {
+  width: 100%; }
+
+.last-related fieldset {
+  border: none; }
+
+.inline-group .tabular tr.has_original td {
+  padding-top: 2em; }
+
+.inline-group .tabular tr td.original {
+  padding: 2px 0 0 0;
+  width: 0;
+  _position: relative; }
+
+.inline-group .tabular th.original {
+  width: 0px;
+  padding: 0; }
+
+.inline-group .tabular td.original p {
+  position: relative;
+  left: 0;
+  height: auto;
+  padding: 2px 7px;
+  overflow: hidden;
+  font-size: 9px;
+  font-weight: bold;
+  color: #666; }
+
+@media (max-width: 540px) {
+  .inline-related.tabular table tr, .inline-related.tabular table td {
+    display: block; }
+  .inline-related.tabular table thead {
+    display: none; } }
+
+.inline-group ul.tools {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.inline-group ul.tools li {
+  display: inline;
+  padding: 0 5px; }
+
+.inline-group div.add-row,
+.inline-group .tabular tr.add-row td {
+  color: #666;
+  padding: 3px 5px;
+  border-bottom: 1px solid #ddd; }
+
+.inline-group .tabular tr.add-row td {
+  padding: 4px 5px 3px;
+  border-bottom: none; }
+
+.inline-group ul.tools a.add,
+.inline-group div.add-row a,
+.inline-group .tabular tr.add-row td a {
+  background: url(../img/icon_addlink.gif) 0 50% no-repeat;
+  padding-left: 14px;
+  font-size: 11px;
+  outline: 0;
+  /* Remove dotted border around link */ }
+
+.empty-form {
+  display: none; }
+
+/* RELATED FIELD ADD ONE / LOOKUP */
+.add-another, .related-lookup {
+  margin-left: 5px;
+  display: inline-block; }
+
+.add-another {
+  width: 10px;
+  height: 10px; }
+
+.related-lookup {
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/selector-search.gif); }
+
+/* WIDGET OVERRIDES */
+.selector,
+.selector select,
+.selector .selector-available input {
+  width: 100%;
+  margin: 0; }
+
+.selector-available, .selector-chosen {
+  float: none;
+  width: 100%; }
+  @media (min-width: 760px) {
+    .selector-available, .selector-chosen {
+      float: left;
+      width: 47%; } }
+
+.selector .selector-available h2 {
+  background: transparent;
+  color: inherit; }
+
+.selector-available h2, .selector-chosen h2,
+.selector .selector-filter {
+  border: 0; }
+
+.selector .selector-filter {
+  font-size: 12px;
+  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  padding: 0; }
+  .selector .selector-filter img {
+    display: none; }
+
+.selector ul.selector-chooser {
+  display: none; }
+  @media (min-width: 760px) {
+    .selector ul.selector-chooser {
+      display: block; } }
+
+.selector-chosen select {
+  border: 1px solid #ccc; }
+
+.filter-widget .help,
+.filter-widget label {
+  display: none; }
+
+.filter-widget .add-another {
+  float: left; }

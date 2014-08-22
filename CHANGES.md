@@ -1,5 +1,8 @@
 # Tango Admin Change Log
 
+## 0.2.2
+* defined fields on blacklist form
+
 ## 0.2.1
 * Updated readme
 

@@ -8,3 +8,4 @@ class BlacklistForm(forms.ModelForm):
 
     class Meta:
         model = Blacklist
+        fields = ['reason', 'is_spammer']

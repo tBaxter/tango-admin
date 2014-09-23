@@ -1,5 +1,7 @@
 include LICENSE README.md CHANGES.md
-recursive-include tango-admin *.html
-recursive-include tango-admin *.json
-recursive-include tango-admin *.md
+recursive-include tango_admin *.html
+recursive-include tango_admin *.json
+recursive-include tango_admin *.md
+recursive-include tango_admin *.css
+recursive-include tango_admin *.js
 recursive-include docs *.txt

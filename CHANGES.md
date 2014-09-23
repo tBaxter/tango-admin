@@ -1,5 +1,17 @@
 # Tango Admin Change Log
 
+## 0.2.6
+* Better error handling if app list isn't present, as in the case of a redirect.
+
+## 0.2.5
+* More manifest path corrections
+
+## 0.2.4
+* Bad manifest path
+
+## 0.2.3
+* Minor bug fix
+
 ## 0.2.2
 * defined fields on blacklist form
 

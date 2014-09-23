@@ -36,9 +36,15 @@ def tango_admin_app_list(context):
     #index_view = AdminHelper(request).get_index_view()
     template_response = index_view.func(request)
 
+    try:
+        applist = template_response.context_data['app_list']
+    except AttributeError():
+        applist = []
+
+
     #$template_response = resolve(reverse('%s:index' % namespace))
     return {
-        'apps': template_response.context_data['app_list'],
+        'apps': applist,
         'current_app': template_response._current_app,
         'path': request.path,
     }

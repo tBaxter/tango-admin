@@ -3,8 +3,8 @@ from django.db import models
 
 UserModel = getattr(settings, "AUTH_USER_MODEL", "auth.User")
 
-# Add some description and featured to Site and auth.Group models
 """
+# Add some description and featured to Site and auth.Group models
 Site.add_to_class('description', models.CharField(
     max_length=100,
     blank=True,

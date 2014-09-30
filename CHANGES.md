@@ -1,5 +1,14 @@
 # Tango Admin Change Log
 
+## 0.2.9
+* More error handling in case apps aren't in context.
+
+## 0.2.8
+* Additional cleanup
+
+## 0.2.7
+* minor cleanup
+
 ## 0.2.6
 * Better error handling if app list isn't present, as in the case of a redirect.
 

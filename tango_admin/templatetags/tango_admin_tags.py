@@ -33,18 +33,18 @@ def tango_admin_app_list(context):
     namespace = getattr(current_view, 'app_name', 'admin')
     index_url = reverse('%s:index' % namespace)
     index_view = resolve(index_url)
-    #index_view = AdminHelper(request).get_index_view()
     template_response = index_view.func(request)
 
+    # Ensure response has context data and apps. Redirects don't.
     try:
-        applist = template_response.context_data['app_list']
-    except AttributeError():
-        applist = []
+        app_list = template_response.context_data['app_list']
+        current_app = template_response._current_app
+    except Exception:
+        app_list = []
+        current_app = None
 
-
-    #$template_response = resolve(reverse('%s:index' % namespace))
     return {
-        'apps': applist,
-        'current_app': template_response._current_app,
+        'apps': app_list,
+        'current_app': current_app,
         'path': request.path,
     }

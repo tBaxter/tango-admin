@@ -1,5 +1,8 @@
 # Tango Admin Change Log
 
+## 0.2.10
+* Still more error handling in case apps aren't in context.
+
 ## 0.2.9
 * More error handling in case apps aren't in context.
 

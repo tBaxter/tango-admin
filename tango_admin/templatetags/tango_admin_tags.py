@@ -31,15 +31,17 @@ def tango_admin_app_list(context):
     request = context['request']
     current_view = resolve(request.path)
     namespace = getattr(current_view, 'app_name', 'admin')
-    index_url = reverse('%s:index' % namespace)
-    index_view = resolve(index_url)
-    template_response = index_view.func(request)
 
-    # Ensure response has context data and apps. Redirects don't.
+    # Ensure response has context data and apps.
+    # Redirects don't, and neither does pages outside
+    # an app context (lacking namespace), such as documentation pages
     try:
+        index_url = reverse('%s:index' % namespace)
+        index_view = resolve(index_url)
+        template_response = index_view.func(request)
         app_list = template_response.context_data['app_list']
         current_app = template_response._current_app
-    except Exception:
+    except Exception: # yeah, this is suppressing any error. We're living dangerously.
         app_list = []
         current_app = None
 

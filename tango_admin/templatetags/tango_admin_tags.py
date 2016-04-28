@@ -33,7 +33,7 @@ def tango_admin_app_list(context):
     namespace = getattr(current_view, 'app_name', 'admin')
 
     # Ensure response has context data and apps.
-    # Redirects don't, and neither does pages outside
+    # Redirects don't, and neither do pages outside
     # an app context (lacking namespace), such as documentation pages
     try:
         index_url = reverse('%s:index' % namespace)

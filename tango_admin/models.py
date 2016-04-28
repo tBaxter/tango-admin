@@ -17,16 +17,22 @@ Group.add_to_class('description', models.TextField(
 )
 """
 
+
 class Blacklist(models.Model):
     user = models.ForeignKey(UserModel, editable=False)
     date = models.DateTimeField(auto_now_add=True)
     blacklister = models.ForeignKey(UserModel, editable=False, related_name="blacklister")
-    reason = models.TextField(help_text="The reason for the blacklist for our records. This will not be public.")
+    reason = models.TextField(help_text="""
+        The reason for the blacklist for our records.
+        This will not be public.""")
     is_spammer = models.BooleanField(
         default=False,
         help_text="""If they are a spammer, please check this.
         All of their comments will be permanently removed."""
     )
+
+    class Meta:
+        app_label = 'tango_admin'
 
     def __unicode__(self):
         return self.user.username

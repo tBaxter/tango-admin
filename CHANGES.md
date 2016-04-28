@@ -1,5 +1,8 @@
 # Tango Admin Change Log
 
+## 0.3.0
+Updates for Django 1.8 and minor PEP-8 cleanup
+
 ## 0.2.10
 * Still more error handling in case apps aren't in context.
 

@@ -1,5 +1,8 @@
 # Tango Admin Change Log
 
+## 0.3.1
+Incremented tango-shared-core version
+
 ## 0.3.0
 Updates for Django 1.8 and minor PEP-8 cleanup
 

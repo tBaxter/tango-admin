@@ -1,7 +1,7 @@
 from django import template
 from django.contrib.staticfiles.finders import AppDirectoriesFinder
 from django.contrib.staticfiles.storage import staticfiles_storage
-from django.core.urlresolvers import resolve, reverse
+from django.urls import resolve, reverse
 
 register = template.Library()
 
